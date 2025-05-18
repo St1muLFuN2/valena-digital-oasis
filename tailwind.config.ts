@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				valena: "#3e9970",
+				"valena-dark": "#2d6f52",
+				"valena-light": "#4fba8c",
+			},
+			backgroundImage: {
+				'festival-gradient': 'linear-gradient(90deg, #FEF7CD 0%, #33C3F0 100%)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +91,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				marquee: {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				marquee: 'marquee 25s linear infinite',
+				fadeIn: 'fadeIn 0.5s ease-out forwards'
 			}
 		}
 	},

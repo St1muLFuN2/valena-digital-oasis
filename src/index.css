@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,54 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-white font-['Roboto',sans-serif];
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Orbitron',sans-serif] font-bold;
+  }
+}
+
+.futuristic-border {
+  position: relative;
+  border: 1px solid rgba(62, 153, 112, 0.3);
+}
+
+.futuristic-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent 20%, #3e9970 35%, #3e9970 65%, transparent 80%);
+  background-size: 400% 400%;
+  animation: borderAnimation 8s ease infinite;
+  z-index: -1;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
 }
